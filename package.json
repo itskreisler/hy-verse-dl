@@ -1,0 +1,19 @@
+{
+  "name": "mhy-dl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sass/mystyles.scss",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss docs/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "bulma": "^0.9.3",
+    "bulmaswatch": "^0.8.1",
+    "eslint": "^8.0.0-rc.0",
+    "node-sass": "^6.0.1"
+  }
+}
