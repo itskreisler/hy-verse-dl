@@ -18,7 +18,7 @@ function initSite() {
     // Show something the user can interact with as soon as possible.
     showSomething(settingsModal);
 
-    document.getElementById('changebutton').addEventListener('click', () => settingsModal.show(true));
+    document.getElementById('settingsbutton').addEventListener('click', () => settingsModal.show(true));
 
     const helpModal = new Modal(document.getElementById('helpmodal'));
     document.getElementById('helpbutton').addEventListener('click', () => helpModal.show(true));
