@@ -10,20 +10,20 @@ const updateData = checkStoredUrl();
 document.readyState !== 'loading' ? initSite() : window.addEventListener('DOMContentLoaded', initSite);
 
 function initSite() {
-    addNavbarListeners();
+	addNavbarListeners();
 
-    // Create Modals and add event listeners to buttons.
-    const settingsModal = new SettingsModal(document.getElementById('settingsmodal'));
+	// Create Modals and add event listeners to buttons.
+	const settingsModal = new SettingsModal(document.getElementById('settingsmodal'));
 
-    // Show something the user can interact with as soon as possible.
-    showSomething(settingsModal);
+	// Show something the user can interact with as soon as possible.
+	showSomething(settingsModal);
 
-    document.getElementById('settingsbutton').addEventListener('click', () => settingsModal.show(true));
+	document.getElementById('settingsbutton').addEventListener('click', () => settingsModal.show(true));
 
-    const helpModal = new Modal(document.getElementById('helpmodal'));
-    document.getElementById('helpbutton').addEventListener('click', () => helpModal.show(true));
+	const helpModal = new Modal(document.getElementById('helpmodal'));
+	document.getElementById('helpbutton').addEventListener('click', () => helpModal.show(true));
 }
 
 async function showSomething(settingsModal) {
-    (await updateData).success ? buildSite((await updateData).data) : settingsModal.show(false, (await updateData).data);
+	(await updateData).success ? buildSite((await updateData).data) : settingsModal.show(false, (await updateData).data);
 }
