@@ -13,7 +13,7 @@ const App = () => {
     <Router>
       <TagAppContext>
       <main>
-      {/* <Menu /> */}
+      <Menu />
       <Routes>
         {appPages.map(({ url, Component }, index) => (
           <Route key={index} path={url} exact={true} element={<Component />} />
