@@ -1,3 +1,12 @@
 {
-	"liveServer.settings.root": "/docs"
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
+    "cSpell.words": [
+        
+    ],
+    "cSpell.enabled": false
 }
