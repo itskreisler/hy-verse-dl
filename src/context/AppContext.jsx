@@ -26,7 +26,7 @@ export const TagAppContext = ({ children, hashKey }) => {
     <AppContext.Provider
       value={{
         myLang: language,
-        myDataApi: updateData,
+        myDataApi: { updateData, setUpdateData },
         myForm: { formSettings, setFormSettings },
         myModal: { show, handleClose, handleShow }
       }}

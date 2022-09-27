@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Button } from 'react-bootstrap'
@@ -10,7 +10,7 @@ import { useAppContext } from '../context/AppContext'
 import { TagVerticallyCenteredModal } from './TagVerticallyCenteredModal'
 
 const Menu = () => {
-  const { myDataApi, myModal: { show, handleClose, handleShow } } = useAppContext()
+  const { myDataApi: { updateData }, myModal: { show, handleClose, handleShow } } = useAppContext()
 
   const { location, push } = useRouter()
   const temp = appPages.find(
@@ -43,7 +43,7 @@ const Menu = () => {
           </Nav> */}
           <Nav>
             <Nav.Link>
-              Latest version: <strong>{myDataApi?.data?.latest?.version}</strong>
+              Latest version: <strong>{updateData?.data?.latest?.version}</strong>
             </Nav.Link>
           </Nav>
           <Button
