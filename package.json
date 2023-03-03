@@ -17,5 +17,8 @@
     "bulmaswatch": "^0.8.1",
     "eslint": "^8.35.0",
     "sass": "^1.58.3"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
