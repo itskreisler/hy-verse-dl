@@ -1,16 +1,140 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/hy-verse-dl/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HY-verse-dl</title>
-    <script defer="" src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
-    <script type="module" crossorigin src="/hy-verse-dl/assets/js/index.js"></script>
-    <link rel="stylesheet" href="/hy-verse-dl/assets/css/style.css">
-  </head>
-  <body class="bg-dark text-white">
-    <div id="root"></div>
-    
-  </body>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="referrer" content="no-referrer">
+
+	<title>mHY-dl</title>
+
+	<link rel="stylesheet" href="css/mystyles.css">
+
+	<script type="module" src="./js/initSite.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+</head>
+
+<body>
+	<nav class="navbar" aria-label="main navigation">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-item">
+					<strong>mHY-dl</strong>
+				</span>
+
+				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+
+			<div class="navbar-menu" id="mainNavbar">
+				<div class="navbar-start"></div>
+
+				<div class="navbar-end">
+					<div class="is-hidden navbar-item" id="versionbox">
+						<span>Latest version: <strong id="versiontext"></strong></span>
+					</div>
+					<div class="navbar-item">
+						<div class="buttons">
+							<a class="button is-dark" id="settingsbutton">
+								<span class="icon is-small">
+									<i class="fas fa-cog"></i>
+								</span>
+							</a>
+							<a class="button is-hidden is-dark" id="helpbutton">
+								<span class="icon is-small">
+									<i class="fas fa-question"></i>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="modal" id="settingsmodal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="box">
+				<h1 class="title">Settings</h1>
+				<hr class="divider">
+				<article class="message is-danger is-hidden urlfailbox">
+					<div class="message-header">
+						<p>Failed to get update data</p>
+					</div>
+					<div class="message-body urlfailtext"></div>
+				</article>
+				<div class="field">
+					<label class="label">Update data URL</label>
+					<div class="control has-icons-left urlcontrol">
+						<input class="input urlinput" type="url" placeholder="https://sdk-...">
+						<span class="icon is-small is-left">
+							<i class="fas fa-link"></i>
+						</span>
+						<span class="icon is-small is-right is-hidden urlerroricon">
+							<i class="fas fa-exclamation-triangle"></i>
+						</span>
+					</div>
+				</div>
+				<div class="field">
+					<div class="control">
+						<label class="checkbox">
+							<input type="checkbox" class="predlcheckbox">
+							Show pre-downloads, if available
+						</label>
+					</div>
+				</div>
+				<hr class="divider">
+				<div class="field">
+					<div class="control">
+						<button class="button is-success savebutton"><strong>Save</strong></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	</div>
+
+	<div class="modal" id="helpmodal">
+		<div class="modal-background"></div>
+		<div class="modal-content">
+			<div class="box">
+				<div class="content"></div>
+			</div>
+		</div>
+		<button class="modal-close is-large" aria-label="close"></button>
+	</div>
+
+	<section class="section">
+		<div class="container">
+			<div class="columns is-mobile is-centered" id="progressbar">
+				<div class="column is-9-mobile is-4-tablet is-3-fullhd">
+					<h1 class="title is-4 has-text-centered">Fetching data...</h1>
+					<progress class="progress" max="100">Loading...</progress>
+				</div>
+			</div>
+
+			<div class="block is-hidden" id="maincolumn">
+				<div class="block is-hidden" id="reccolumn">
+					<h1 class="title">The latest and greatest</h1>
+					<h2 class="subtitle">If you want to update from <span id="lastversiontext"></span> or just
+						(re)installed the game.
+					</h2>
+
+					<div class="columns is-desktop is-multiline" id="recboxes"></div>
+				</div>
+				<div class="block mt-6 is-hidden" id="oldcolumn">
+					<h1 class="title">Update from an older version</h1>
+					<h2 class="subtitle">If you took a nice, long break and might have missed an update or two.</h2>
+
+					<div class="columns is-desktop is-multiline" id="oldboxes"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
 </html>
