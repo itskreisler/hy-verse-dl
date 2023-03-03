@@ -6,7 +6,9 @@
   "scripts": {
     "css-build": "sass --no-source-map sass/mystyles.scss docs/css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "start": "npm run css-watch",
+    "predeploy": "npm run css-build",
+    "deploy": "gh-pages -d docs"
   },
   "author": "",
   "license": "",
